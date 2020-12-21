@@ -1,0 +1,121 @@
+/* footer css */
+footer#main-footer {
+    position: relative;
+    bottom: 0;
+    background: #291e1e;
+}
+
+#main-footer div.presvg {
+    position: relative;
+    top: 100px;
+    /* margin-top: 40px; */
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+}
+
+div.presvg ul {
+    color: white;
+    list-style-type: none;
+}
+
+div.presvg ul li:not(.noB):hover {
+    color: rgb(214, 195, 19);
+}
+
+/* .presvg li {
+    margin-right: 7px;
+    border-right: rgb(185, 75, 23);
+} */
+
+#main-footer .presvg ul li:not(.noB):before {
+    content: '\2022';
+    color: rgb(214, 195, 19);
+    font-weight: bold;
+    display: inline-block;
+    width: 1.2em;
+    margin-left: -1em;
+}
+
+#main-footer .presvg ul li#pre pre {
+    margin-top: -1.4em;
+}
+
+div.presvg ul li h3 {
+    padding: 0 0 15px 10px;
+    font-size: 22px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+div.presvg ul li:nth-child(n + 2) {
+    padding: 9px;
+    cursor: pointer;
+}
+
+/* #main-footer div>img+div {
+    color: #fff;
+    width: 200px;
+    height: 50px;
+    font-size: 14px;
+    padding: 4px;
+    margin-bottom: 10px;
+    text-align: justify;
+} */
+
+#main-footer div.socials {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 35px;
+    cursor: pointer;
+}
+
+#main-footer div.socials img {
+    margin-left: 45px;
+}
+
+@media (max-width:750px) {
+    #main-footer div.presvg {
+        top: 50px;
+        display: grid;
+        padding-left: 20px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+    }
+
+    #footer-logo {
+        position: relative;
+        margin-top: -80px;
+        bottom: -50px;
+    }
+
+    #main-footer div.socials {
+        margin-top: 15px;
+    }
+
+    #main-footer div.socials img {
+        justify-content: space-between;
+    }
+
+}
+
+@media (max-width: 550px) {
+    #main-footer div.presvg {
+        margin-left: 50px;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .socials {
+        position: relative;
+        bottom: 20px;
+        left: -50px;
+    }
+}
+
+@media (max-width: 290px) {
+    #main-footer {
+        width: 100vw;
+    }
+}
+
+/* footer css End */
