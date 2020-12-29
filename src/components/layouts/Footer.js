@@ -16,14 +16,12 @@ const Footer = () => {
                     </li>
                     <li id='pre'>
                         <pre style={{ color: '#fff' }}>
-                            Suite 6, U-Mudi Filling Station,
-                            Lekki-Epe Express,
-                            Ibeju-Lekki,
-                            Lagos.
+                            1B,Allen Avenue,
+                            Ikeja, Lagos
+                            Nigeria
                     </pre>
                     </li>
-                    <li>Mon - Sat: 09:00am - 5:00pm</li>
-                    <li>+234 809 444 2019</li>
+                    <li>+234 813 769 7114</li>
                     <li>
                         <a className='mail' href="mailto: hello.florahomesgc@gmail.com" style={{ color: 'white' }}>hello.florahomesgc@gmail.com</a>
                     </li>
