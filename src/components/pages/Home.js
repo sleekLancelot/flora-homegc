@@ -409,23 +409,31 @@ const Home = () => {
         </div>
         <div className='card-deck'>
           <div className='card'>
-            <img
-              id='sec5Img'
-              className='card-img-top'
-              src={cardImg1}
-              alt='Card cap'
-            />
+            <div className='secImg'>
+              <img
+                id='sec5Img'
+                className='card-img-top'
+                src={cardImg1}
+                alt='Card cap'
+              />
+            </div>
             <div className='card-body'>
               <h5 className='card-title'>
                 <p>
-                  <img
+                  <i
+                    class='fas fa-user-alt'
                     style={{ marginRight: '10px' }}
-                    src={profileIcon}
-                    alt=''
-                  />
-                  Dona Admin
+                  ></i>
+                  FLORAHOMES ADMIN
+                  <span className='calender' style={{ float: 'right' }}>
+                    <i class='fas fa-calendar-check'></i>{' '}
+                    <span className='text-muted'>2020-12-14</span>
+                  </span>
                 </p>
-                <small className='text-muted'>Last updated 3 mins ago</small>
+                <span>
+                  <i class='fas fa-tags' style={{ marginRight: '10px' }}></i>
+                  <small className='text-muted'>Property Documentation</small>
+                </span>
               </h5>
               <p className='card-text'>
                 Lagos Set To Go Digital in Land Related Services Come 2021
@@ -439,23 +447,32 @@ const Home = () => {
             </div>
           </div>
           <div className='card'>
-            <img
-              id='sec5Img'
-              className='card-img-top'
-              src={cardImg12}
-              alt='Card cap'
-            />
+            <div className='secImg'>
+              <img
+                id='sec5Img'
+                className='card-img-top'
+                src={cardImg12}
+                alt='Card cap'
+              />
+            </div>
+
             <div className='card-body'>
               <h5 className='card-title'>
                 <p>
-                  <img
-                    style={{ marginRight: '19px' }}
-                    src={profileIcon}
-                    alt=''
-                  />
-                  Dona HQ
+                  <i
+                    class='fas fa-user-alt'
+                    style={{ marginRight: '10px' }}
+                  ></i>
+                  FLORAHOMESGC
+                  <span className='calender' style={{ float: 'right' }}>
+                    <i class='fas fa-calendar-check'></i>{' '}
+                    <span className='text-muted'>2020-10-07</span>
+                  </span>
                 </p>
-                <small className='text-muted'>Last updated 5 days ago</small>
+                <span>
+                  <i class='fas fa-tags' style={{ marginRight: '10px' }}></i>
+                  <small className='text-muted'>Real Estate Investment</small>
+                </span>
               </h5>
               <p className='card-text'>Know Your Land Size</p>
             </div>
@@ -467,23 +484,34 @@ const Home = () => {
             </div>
           </div>
           <div className='card'>
-            <img
-              id='sec5Img'
-              className='card-img-top'
-              src={cardImg3}
-              alt='Card cap'
-            />
+            <div className='secImg'>
+              <img
+                id='sec5Img'
+                className='card-img-top'
+                src={cardImg3}
+                alt='Card cap'
+              />
+            </div>
+
             <div className='card-body'>
               <h5 className='card-title'>
                 <p>
-                  <img
+                  <i
+                    class='fas fa-user-alt'
                     style={{ marginRight: '10px' }}
-                    src={profileIcon}
-                    alt=''
-                  />
-                  Dona User
+                  ></i>
+                  FLORAHOMESGC
+                  <span className='calender' style={{ float: 'right' }}>
+                    <i class='fas fa-calendar-check'></i>{' '}
+                    <span className='text-muted'>2020-05-07</span>
+                  </span>
                 </p>
-                <small className='text-muted'>Last updated a day ago</small>
+                <span>
+                  <i class='fas fa-tags' style={{ marginRight: '10px' }}></i>
+                  <small className='text-muted'>
+                    Property Authentication & Verification
+                  </small>
+                </span>
               </h5>
               <p className='card-text'>Know Your Property Title</p>
             </div>

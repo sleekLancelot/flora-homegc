@@ -681,19 +681,58 @@ div.sec2 div.embed-responsive {
   cursor: pointer;
 }
 
-.sec div.card:hover {
-  overflow: hidden;
-}
-
 .sec5 div.card img#sec5Img {
-  height: 250px;
+  height: 100%;
   transition: all 4s ease-in-out;
   transform-style: preserve-3d;
   object-fit: cover;
 }
 
-.sec5 .card-body {
+.sec5 div.card div.secImg {
+  overflow: hidden;
+  position: relative;
+  height: 250px;
+}
+
+.sec5 div.card div.secImg::after {
+  position: absolute;
+  left: -30px;
+  content: '';
+  background: linear-gradient(to right,
+      rgba(255, 255, 255, 0.13) 0%,
+      rgba(255, 255, 255, 0.13) 77%,
+      rgba(255, 255, 255, 0.5) 92%,
+      rgba(255, 255, 255, 0) 100%);
+  width: 10%;
+  height: 100%;
+  transform: translate(-100%);
+  z-index: 1000;
+}
+
+.sec5 div.card div.secImg:hover::after {
+  animation: loading 2s ease-in infinite alternate running forwards;
+}
+
+@keyframes loading {
+  from {
+    left: -50px;
+    transform: translate(10%);
+  }
+
+  to {
+    left: 100%;
+    transform: translate(1000%);
+  }
+}
+
+.sec5 .card-footer {
   background: rgba(245, 242, 242, 0.486);
+}
+
+i.fa-calendar-check,
+i.fa-user-alt,
+i.fa-tags {
+  color: var(--secondary-color);
 }
 
 .sec5 .text-muted {
@@ -704,8 +743,15 @@ div.sec2 div.embed-responsive {
   margin-top: 0;
 }
 
+.sec5 .custom-btn {
+  background: var(--primary-color);
+  box-shadow: var(--primary-shadow);
+  color: #fff;
+}
+
 .sec5 .custom-btn::before {
   content: 'Read More...';
+  color: var(--primary-color);
 }
 
 /* slider ends */
@@ -715,8 +761,19 @@ ul.navbar-nav {
 }
 
 /* wide screens start */
+/* @media screen and (min-width: 995px) and (max-width: 1125px),
+  not screen and (max-width: 992px) {
+  div.navbar-collapse ul.navbar-nav {
+    margin-left: 80px;
+  }
+} */
+
 @media (max-width: 1125px) {
-  ul.navbar-nav {
+  div.navbar-collapse.show ul.navbar-nav {
+    margin-left: 0;
+  }
+
+  div.navbar-collapse ul.navbar-nav {
     margin-left: 80px;
   }
 }
@@ -930,33 +987,27 @@ ul.navbar-nav {
     align-self: center;
   }
 
+  .sec3 {
+    overflow: hidden;
+  }
+
   .sec4 {
-    margin-top: 100px;
+    margin-top: 25px;
+    overflow: hidden;
   }
+
+  .sec5 .card-deck {
+    flex-flow: column wrap;
+  }
+
+  .sec5 .card-deck .card {
+    margin-bottom: 40px;
+  }
+
+  /* div:not(.sec3 .container .row) {
+    overflow-x: hidden !important;
+  } */
 }
-
-/* @media (max-width: 751px) {
-  .con3 div.col-sm div.svg {
-    position: relative;
-    width: 60px;
-    height: 120%;
-    padding: 20px;
-    margin: -10px 20px;
-    transform: rotate(-10deg);
-    transition: all 0.3s ease-in-out;
-    margin-right: 25px;
-  }
-
-  .con3 div.col-sm:hover div.svg {
-    transform: rotate(10deg);
-  }
-
-  .con3 div.col-sm div.svg svg {
-    position: absolute;
-    top: 100px;
-    right: 10px;
-  }
-} */
 
 /* small screen start */
 @media (max-width: 700px) {
@@ -1151,7 +1202,7 @@ ul.navbar-nav {
   }
 
   /* shut the scrolls */
-  div:not(.svg):not(.chevron):not(.img):not(.newP) {
+  div:not(.svg):not(.chevron):not(.img):not(.newP):not(.sec3 .container .row) {
     overflow-x: hidden !important;
   }
 
@@ -1191,6 +1242,10 @@ ul.navbar-nav {
 
   nav div#navbarSupportedContent ul li:nth-child(4) a::after {
     margin-left: 60vw;
+  }
+
+  div:not(.svg):not(.chevron):not(.img):not(.newP) {
+    overflow-x: hidden !important;
   }
 }
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../assets/default.png';
+import logo from '../assets/FHGC weblogo.png';
 import insta from '../assets/insta.png';
 import twitter from '../assets/twitter.png';
 import facebook from '../assets/facebook.png';
@@ -43,7 +43,7 @@ const Footer = () => {
                     <li>Lagos Court</li>
                 </ul>
                 <div>
-                    <img id='footer-logo' src={logo} alt="Crimistry" style={{ width: '150px', height: '200px' }} />
+                    <img id='footer-logo' src={logo} alt="Crimistry" style={{ width: '100px', height: '50px' }} />
 
                     {/* <div>
                         <p>
