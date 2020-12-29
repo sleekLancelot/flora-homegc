@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import partner from '../assets/partn.png';
-import bmw from '../assets/bmw-logo.jpg';
 import mock from '../assets/app-mockup.png';
-import sawo from '../assets/saworoide-michael-bello.jpg';
-import cardImg1 from '../assets/4 node ARPA network.jpg';
-import cardImg12 from '../assets/nuerological levels.jpg';
-import cardImg3 from '../assets/stale meme.jfif';
+import workers from '../assets/workers.jpg';
+import cardImg1 from '../assets/blog1.jpg';
+import cardImg12 from '../assets/blog2.jpg';
+import cardImg3 from '../assets/blog3.jpg';
 import profileIcon from '../assets/profileIcon.png';
 import surv from '../assets/land-verification.jpg';
 import iconShape from '../assets/icon-shape.png';
@@ -127,6 +126,8 @@ const Home = () => {
               />
             </Fade> */}
 
+            <span className='icon-dots'></span>
+
             <Fade left>
               <div className='image-box'>
                 <figure className='image'>
@@ -205,18 +206,18 @@ const Home = () => {
                 <div className='word'>
                   <h4>Verification Service</h4>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Sunt, temporibus enim. Explicabo temporibus minus atque
-                    accusamus, natus sint eos, eaque ad illo numquam a
-                    laudantium nam ullam dolorum, hic totam!
+                    Save yourself from demolition, 3rd party claimant, and Scams
+                    by availing yourself of our verification service which
+                    brings together our field expert to help you know the status
+                    of the landed property you want to buy.
                   </p>
                 </div>
 
                 <div className='chevron'>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
-                    width='46'
-                    height='46'
+                    width='16'
+                    height='16'
                     fill='currentColor'
                     className='bi bi-chevron-right'
                     viewBox='0 0 16 16'
@@ -253,18 +254,20 @@ const Home = () => {
                 <div className='word'>
                   <h4>Complete Property Buyer Services</h4>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Dolores consequuntur ex a, ea commodi magnam libero at odio
-                    est. Porro sed eos ad amet nulla quos sit, voluptate quae
-                    velit!
+                    Do you need to buy your choice property at your choice
+                    location, or you just need property services like Survey,
+                    Valuation, Documentation, Sourcing, Negotiation, Payment . .
+                    . then engage this Service at 100% done for you. This
+                    service caters for both individuals, corporate
+                    organizations, within Nigeria and in Diaspora.
                   </p>
                 </div>
 
                 <div className='chevron'>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
-                    width='46'
-                    height='46'
+                    width='16'
+                    height='16'
                     fill='currentColor'
                     className='bi bi-chevron-right'
                     viewBox='0 0 16 16'
@@ -286,15 +289,19 @@ const Home = () => {
       </div>
 
       <div className='sec2'>
-        <h2>WHERE WE AT</h2>
+        <h2 className='text-center'>WHAT WE STAND FOR</h2>
         <div className='embed-responsive embed-responsive-16by9'>
           <iframe
             id='inlineFrameExample'
-            title='Inline Frame Example'
+            title='FloraHomeGC Intro Video'
             loading='lazy'
             className='embed-responsive-item'
-            src='https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik'
+            width='560'
+            height='315'
+            src='https://www.youtube.com/embed/gkAYHJvo8as?autoplay=1&mute=1'
             allowFullScreen
+            frameBorder='0'
+            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
           ></iframe>
         </div>
       </div>
@@ -310,30 +317,29 @@ const Home = () => {
               <Slide left>
                 <ul>
                   <li className='noB'>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Beatae optio est non rerum quaerat reprehenderit!
+                    Providing 100% done-for-you real estate services to existing
+                    and aspiring property investors.
                   </li>
                   <li className='noB'>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Beatae optio est non rerum quaerat reprehenderit!
+                    Delivering simplified quality information to the mobile
+                    phones of every property investor using technology.
                   </li>
                   <li className='noB'>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Beatae optio est non rerum quaerat reprehenderit!
+                    Engaging green architecture that revitalizes every soul
+                    occupying the space.
                   </li>
                 </ul>
               </Slide>
+              <button type='button' className='custom-btn btn btn-lg'>
+                Learn More...
+              </button>
             </div>
             <div className='col-sm'>
               <div className='clipBorder'>
-                <img src={sawo} alt='sawo' />
+                <img src={workers} alt='workers' />
               </div>
             </div>
           </div>
-
-          <button type='button' className='custom-btn btn btn-lg'>
-            Learn More...
-          </button>
         </div>
       </div>
 
@@ -341,7 +347,7 @@ const Home = () => {
         <div className='testTile text-center'>
           <RubberBand>
             <h4>TESTIMONIAL</h4>
-            <h2>What They Say About Us</h2>
+            <h2>What Clients Say</h2>
           </RubberBand>
         </div>
 
@@ -374,8 +380,10 @@ const Home = () => {
                       />
                     </svg>
                     <p className='statement'>{slide.p}</p>
-                    <p id='name'>{slide.name}</p>
-                    <p>
+                    <p className='text-center' id='name'>
+                      {slide.name}
+                    </p>
+                    <p className='text-center'>
                       {slide.rating.map((r, index) => {
                         return (
                           <i
@@ -397,7 +405,7 @@ const Home = () => {
       <div className='sec5'>
         <div className='text-center'>
           <h4>BLOGS</h4>
-          <h2>Eye Opening Content</h2>
+          <h2>Eye-Opening Content</h2>
         </div>
         <div className='card-deck'>
           <div className='card'>
@@ -420,9 +428,7 @@ const Home = () => {
                 <small className='text-muted'>Last updated 3 mins ago</small>
               </h5>
               <p className='card-text'>
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
+                Lagos Set To Go Digital in Land Related Services Come 2021
               </p>
             </div>
             <div className='card-footer'>
@@ -451,10 +457,7 @@ const Home = () => {
                 </p>
                 <small className='text-muted'>Last updated 5 days ago</small>
               </h5>
-              <p className='card-text'>
-                This card has supporting text below as a natural lead-in to
-                additional content.
-              </p>
+              <p className='card-text'>Know Your Land Size</p>
             </div>
             <div className='card-footer'>
               {/* <small className="text-muted">Last updated 3 mins ago</small> */}
@@ -482,11 +485,7 @@ const Home = () => {
                 </p>
                 <small className='text-muted'>Last updated a day ago</small>
               </h5>
-              <p className='card-text'>
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This card has even longer content
-                than the first to show that equal height action.
-              </p>
+              <p className='card-text'>Know Your Property Title</p>
             </div>
             <div className='card-footer'>
               {/* <small className="text-muted">Last updated 3 mins ago</small> */}

@@ -50,7 +50,7 @@ const Nav = () => {
             </button> */}
 
             <button ref={button} onClick={onClick} className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="" role="button" ><i className="fa fa-bars" aria-hidden="true" style={{ color: '#000' }}></i></span>
+                <span role="button" ><i className="fa fa-bars" aria-hidden="true" style={{ color: '#541484' }}></i></span>
             </button>
 
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
