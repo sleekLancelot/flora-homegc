@@ -71,7 +71,7 @@ div.searchCon {
     height: 70px;
     padding: 20px 10px 20px 10px;
     color: #ffffff !important;
-    background-color: rgb(255, 215, 0);
+    background-color: #541484;
     line-height: 30px;
     font-size: 20px;
     cursor: pointer;
@@ -100,8 +100,8 @@ div.searchCon {
 }
 
 .recentKeys span:hover {
-    color: rgb(255, 215, 0);
-    border: 1px solid rgb(255, 215, 0);
+    color: #541484;
+    border: 1px solid #541484;
 }
 
 /* .modal-form div {
@@ -119,12 +119,12 @@ div.searchCon {
   } */
 
 .close-btn#close {
-    background: inherit;
+    background: #fff;
     font-size: 25px;
     position: absolute;
     top: 150px;
     right: 40px;
-    color: #ffffff;
+    color: #000;
 }
 
 .close-btn i.fa {
@@ -142,10 +142,6 @@ div.searchCon {
 }
 
 @media (max-width:750px) {
-    .searchCon input[type='search'] {
-        width: 285px;
-    }
-
     .searchCon input[type='submit'] {
         position: relative;
         width: 285px;
@@ -153,6 +149,22 @@ div.searchCon {
 
     #modal .close-btn {
         top: 50px;
+    }
+
+    .modal-content h3 {
+        font-size: 24px;
+        margin: 40px auto;
+    }
+
+    .recentKeys span {
+        height: 50px;
+        align-self: flex-end;
+        font-size: 17px;
+        margin-right: 0;
+    }
+
+    .recentKeys span:nth-child(odd) {
+        margin-right: 7px;
     }
 
     .recentKeys span:last-child {

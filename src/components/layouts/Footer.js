@@ -1,64 +1,106 @@
 import React from 'react'
-import logo from '../assets/FHGC weblogo.png';
-import insta from '../assets/insta.png';
-import twitter from '../assets/twitter.png';
-import facebook from '../assets/facebook.png';
+import { Link } from 'react-router-dom'
+import logo from '../assets/FHGC.png';
 
-import '../../Footer.css'
+
+import '../../css/Footer.css'
 
 const Footer = () => {
     return (
-        <footer id='main-footer'>
-            <div className="presvg">
-                <ul>
-                    <li className='noB'>
-                        <h3>Get In Touch</h3>
-                    </li>
-                    <li id='pre'>
-                        <pre style={{ color: '#fff' }}>
-                            1B,Allen Avenue,
-                            Ikeja, Lagos
-                            Nigeria
-                    </pre>
-                    </li>
-                    <li>+234 813 769 7114</li>
-                    <li>
-                        <a className='mail' href="mailto: Contact@crimistry.com" style={{ color: 'white' }}>Contact@dona.com</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li className='noB'>
-                        <h3>Company</h3>
-                    </li>
-                    <li>About</li>
-                    <li>Contact</li>
-                    <li>Blogs</li>
-                    <li>Terms And Conditions</li>
-                </ul>
-                <ul>
-                    <li className='noB'>
-                        <h3>Partners</h3>
-                    </li>
-                    <li>Nigeria Police Force</li>
-                    <li>Lagos Court</li>
-                </ul>
-                <div>
-                    <img id='footer-logo' src={logo} alt="Crimistry" style={{ width: '100px', height: '50px' }} />
+        <footer className="main-footer">
+            <div className="widgets-section">
+                <div className="auto-container">
+                    <div className="row">
+                        <div className="big-column col-xl-6 col-lg-12 col-md-12 col-sm-12">
+                            <div className="row">
+                                <div className="footer-column col-xl-7 col-lg-6 col-md-6 col-sm-12">
+                                    <div className="footer-widget about-widget">
+                                        <div className="logo">
+                                            <Link to="/"><img src={logo} alt="FloraHomes logo" width="150" /></Link>
+                                        </div>
+                                        <div className="text">
+                                            <p>The foremost online property verification and Real Estate investment company that helps clients to acquire verified properties and invest in verified deals.</p>
+                                        </div>
+                                        <ul className="social-icon-one social-icon-colored">
+                                            <li><a href="https://www.facebook.com/florahomesgc" target="_blank" rel='noreferrer'><i className="fab fa-facebook-f"></i></a></li>
+                                            <li><a href="https://www.twitter.com/florahomesgc" target="_blank" rel='noreferrer'><i className="fab fa-twitter"></i></a></li>
+                                            <li><a href="https://www.instagram.com/florahomesgc" target="_blank" rel='noreferrer'><i className="fab fa-instagram"></i></a></li>
+                                            <li><a href="https://www.youtube.com/c/florahomesgc" target="_blank" rel='noreferrer'><i className="fab fa-youtube"></i></a></li>
+                                            <li><a href="https://www.linkedin.com/in/florahomesgc" target="_blank" rel='noreferrer'><i className="fab fa-linkedin"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
 
-                    {/* <div>
-                        <p>
-                            The foremost online property verification and Real Estate investment company that helps clients to acquire verified properties and invest in verified deals.
-                    </p>
-                    </div> */}
+                                <div className="footer-column col-xl-5 col-lg-6 col-md-6 col-sm-12">
+                                    <div className="footer-widget useful-links">
+                                        <h2 className="widget-title">Useful Links</h2>
+                                        <ul className="user-links">
+                                            <li><a href="index.php">Home</a></li>
+                                            <li><a href="blog">Blogs</a></li>
+                                            <li><a href="contact">Contact Us</a></li>
+                                            <li><a href="university">University</a></li>
+                                            <li><a href="links">Quick Links</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                    <div className="socials">
-                        <img src={insta} alt="instagram" />
-                        <img src={twitter} alt="twitter" />
-                        <img src={facebook} alt="facebook" />
+                        <div className="big-column col-xl-6 col-lg-12 col-md-12 col-sm-12">
+                            <div className="row">
+                                <div className="footer-column col-lg-6 col-md-6 col-sm-12">
+                                    <div className="footer-widget contact-widget">
+                                        <h2 className="widget-title">Get in Touch</h2>
+                                        <div className="widget-content">
+                                            <ul className="contact-list">
+                                                <li>
+                                                    <i className="icon far fa-clock"></i>
+                                                    <div className="text">Mon - Sat: 08:00am - 6:00pm</div>
+                                                </li>
+
+                                                <li>
+                                                    <i className="icon fas fa-phone-volume"></i>
+                                                    <div className="text"><a href="tel:+2348094442019">+234-809-444-2019</a></div>
+                                                </li>
+
+                                                <li>
+                                                    <i className="icon fas fa-paper-plane"></i>
+                                                    <div className="text"><a href="mailto:hello.florahomesgc@gmail.com">hello.florahomesgc@gmail.com</a></div>
+                                                </li>
+
+                                                <li>
+                                                    <i className="icon fas fa-globe-africa"></i>
+                                                    <div className="text">Suite 6, U-Mudi Filling Station, Lekki-Epe Express, Ibeju-Lekki, Lagos.</div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="footer-column col-lg-6 col-md-6 col-sm-12">
+                                    <div className="footer-widget useful-links">
+                                        <h2 className="widget-title">T&C's</h2>
+                                        <ul className="user-links">
+                                            <li><a href="404.php">Policy</a></li>
+                                            <li><a href="404.php">Terms and Conditions</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#1e1f36" fillOpacity="0.4" d="M0,256L48,229.3C96,203,192,149,288,154.7C384,160,480,224,576,218.7C672,213,768,139,864,128C960,117,1056,171,1152,197.3C1248,224,1344,224,1392,224L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+
+            <div className="footer-bottom">
+                <div className="auto-container">
+                    <div className="inner-container clearfix">
+                        <div className="copyright-text">
+                            <p>© Copyright 2019 <a href="index.php">FloraHomes GC</a> | All Rights Reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </footer>
     )
 }

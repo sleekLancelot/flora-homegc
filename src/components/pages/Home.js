@@ -5,7 +5,6 @@ import workers from '../assets/workers.jpg';
 import cardImg1 from '../assets/blog1.jpg';
 import cardImg12 from '../assets/blog2.jpg';
 import cardImg3 from '../assets/blog3.jpg';
-import profileIcon from '../assets/profileIcon.png';
 import surv from '../assets/land-verification.jpg';
 import iconShape from '../assets/icon-shape.png';
 
@@ -117,15 +116,6 @@ const Home = () => {
       <div className='container con1'>
         <div className='row'>
           <div className='col-sm'>
-            {/* <Fade left>
-              <img
-                style={{ width: '300px', height: '360px' }}
-                id='bmw'
-                src={bmw}
-                alt=''
-              />
-            </Fade> */}
-
             <span className='icon-dots'></span>
 
             <Fade left>
@@ -380,20 +370,22 @@ const Home = () => {
                       />
                     </svg>
                     <p className='statement'>{slide.p}</p>
-                    <p className='text-center' id='name'>
-                      {slide.name}
-                    </p>
-                    <p className='text-center'>
-                      {slide.rating.map((r, index) => {
-                        return (
-                          <i
-                            key={index}
-                            className='fa fa-star'
-                            aria-hidden='true'
-                          ></i>
-                        );
-                      })}
-                    </p>
+                    <div className='slidFooter'>
+                      <p className='text-center' id='name'>
+                        {slide.name}
+                      </p>
+                      <p className='text-center'>
+                        {slide.rating.map((r, index) => {
+                          return (
+                            <i
+                              key={index}
+                              className='fa fa-star'
+                              aria-hidden='true'
+                            ></i>
+                          );
+                        })}
+                      </p>
+                    </div>
                   </div>
                 )}
               </div>
@@ -421,17 +413,20 @@ const Home = () => {
               <h5 className='card-title'>
                 <p>
                   <i
-                    class='fas fa-user-alt'
+                    className='fas fa-user-alt'
                     style={{ marginRight: '10px' }}
                   ></i>
                   FLORAHOMES ADMIN
                   <span className='calender' style={{ float: 'right' }}>
-                    <i class='fas fa-calendar-check'></i>{' '}
+                    <i className='fas fa-calendar-check'></i>{' '}
                     <span className='text-muted'>2020-12-14</span>
                   </span>
                 </p>
                 <span>
-                  <i class='fas fa-tags' style={{ marginRight: '10px' }}></i>
+                  <i
+                    className='fas fa-tags'
+                    style={{ marginRight: '10px' }}
+                  ></i>
                   <small className='text-muted'>Property Documentation</small>
                 </span>
               </h5>
@@ -460,17 +455,20 @@ const Home = () => {
               <h5 className='card-title'>
                 <p>
                   <i
-                    class='fas fa-user-alt'
+                    className='fas fa-user-alt'
                     style={{ marginRight: '10px' }}
                   ></i>
                   FLORAHOMESGC
                   <span className='calender' style={{ float: 'right' }}>
-                    <i class='fas fa-calendar-check'></i>{' '}
+                    <i className='fas fa-calendar-check'></i>{' '}
                     <span className='text-muted'>2020-10-07</span>
                   </span>
                 </p>
                 <span>
-                  <i class='fas fa-tags' style={{ marginRight: '10px' }}></i>
+                  <i
+                    className='fas fa-tags'
+                    style={{ marginRight: '10px' }}
+                  ></i>
                   <small className='text-muted'>Real Estate Investment</small>
                 </span>
               </h5>
@@ -497,17 +495,20 @@ const Home = () => {
               <h5 className='card-title'>
                 <p>
                   <i
-                    class='fas fa-user-alt'
+                    className='fas fa-user-alt'
                     style={{ marginRight: '10px' }}
                   ></i>
                   FLORAHOMESGC
                   <span className='calender' style={{ float: 'right' }}>
-                    <i class='fas fa-calendar-check'></i>{' '}
+                    <i className='fas fa-calendar-check'></i>{' '}
                     <span className='text-muted'>2020-05-07</span>
                   </span>
                 </p>
                 <span>
-                  <i class='fas fa-tags' style={{ marginRight: '10px' }}></i>
+                  <i
+                    className='fas fa-tags'
+                    style={{ marginRight: '10px' }}
+                  ></i>
                   <small className='text-muted'>
                     Property Authentication & Verification
                   </small>
