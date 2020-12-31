@@ -779,6 +779,7 @@ ul.navbar-nav {
   }
 }
 
+/* breakpoint for iPad pro start */
 @media (max-width: 1125px) and (min-width:990px) {
   .con3 div.col-sm {
     height: auto !important;
@@ -808,6 +809,8 @@ ul.navbar-nav {
     overflow-x: hidden !important;
   }
 }
+
+/* breakpoint for iPad pro end */
 
 @media (min-width: 1130px) {
   .con3 div.col-sm {

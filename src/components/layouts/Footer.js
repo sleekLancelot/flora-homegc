@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import logo from '../assets/FHGC.png';
 
 
-import '../../Footer.css'
+import '../../css/Footer.css'
 
 const Footer = () => {
     return (

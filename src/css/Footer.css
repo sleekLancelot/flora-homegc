@@ -291,6 +291,12 @@
 
 /* footer bottom end*/
 
+@media (max-width: 1125px) and (min-width:990px) {
+    .main-footer .logo {
+        top: 0;
+    }
+}
+
 @media (max-width: 700px) {
     .main-footer .widgets-section {
         padding-top: 35px;
