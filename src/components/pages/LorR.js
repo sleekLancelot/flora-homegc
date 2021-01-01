@@ -5,8 +5,8 @@ import Reg from './Reg';
 import '../../css/LorR.css';
 
 const LorR = () => {
-    const [showReg, setShowReg] = useState(true);
-    const [showLog, setShowLog] = useState(false);
+    const [showReg, setShowReg] = useState(false);
+    const [showLog, setShowLog] = useState(true);
 
     const login = useRef('Login')
     const register = useRef('Register')
@@ -29,7 +29,7 @@ const LorR = () => {
     }
 
     return (
-        <div>
+        <div id='signUp' className='lor'>
             <p className="lorCaption text-center">
                 Join <strong>millions</strong>  of real estate investors, buyers, developers, professionals, realtors, contractors, organisations and other stakeholders that are getting ahead in their investment knowledge, profitability, security and networking.
             </p>
@@ -45,7 +45,7 @@ const LorR = () => {
                     <i className="fab fa-twitter fa-2x"></i>
                     <i className="fab fa-google fa-2x"></i>
                 </div>
-                <div className="LorR">
+                <div className="LorR" style={{ marginBottom: showLog ? '-400px' : '0' }}>
                     <Reg showReg={showReg} />
                     <Login showLog={showLog} />
                 </div>

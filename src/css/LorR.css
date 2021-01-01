@@ -7,7 +7,7 @@
     border-radius: 25px;
 }
 
-a:link {
+.formBox a:link {
     color: initial;
     text-decoration: none;
 }
@@ -209,7 +209,7 @@ input.lr-submit {
     }
 }
 
-@media (max-width:300px) {
+@media (max-width:330px) {
 
     .btnBox,
     .socials {

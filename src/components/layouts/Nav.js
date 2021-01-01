@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-scroll'
 import logo from '../assets/FHGC weblogo.png';
 
 
@@ -99,7 +99,10 @@ const Nav = () => {
                 </div>
 
                 <div className="d-flex justify-content-end">
-                    <button type="button" className="custom-btn btn btn-lg">Register/Login</button>
+                    <Link to='signUp' spy={true} smooth={true}>
+                        <button type="button" className="custom-btn btn btn-lg">Register/Login</button>
+                    </Link>
+
                 </div>
             </div>
         </nav>
