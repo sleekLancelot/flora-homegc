@@ -1520,6 +1520,28 @@ ul.navbar-nav {
   } */
 }
 
+/* iPhone 3/4/4s start*/
+@media (orientation: portrait) and (max-width: 321px) and (min-width: 320px) {
+  .beginning {
+    height: 100vh !important;
+  }
+
+  .testTile {
+    top: 40px !important;
+  }
+
+  .sec5 {
+    margin-top: 150px;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 481px) and (min-width: 480px) {
+  div.sec2 div.embed-responsive {
+    transform: translate(-28%, -35%) !important;
+  }
+}
+/* iPhone 3/4/4s end*/
+
 /* Galaxy fold start */
 @media (orientation: portrait) and (max-width: 280px) {
   div.sec2 div.embed-responsive {
