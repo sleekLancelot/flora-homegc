@@ -1022,6 +1022,11 @@ ul.navbar-nav {
 /* wide screens end */
 
 @media (max-width: 990px) {
+  body {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
   nav.navbar {
     background: #fff;
     z-index: 2000;
@@ -1345,7 +1350,7 @@ ul.navbar-nav {
 
   div.sec2 {
     height: 80vh;
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
   }
 
   div.sec2 h2 {
