@@ -1236,8 +1236,10 @@ ul.navbar-nav {
 }
 /* second carousel breakPoint for iphone5/SE end */
 
-/* shut scroll for iPad mini and below start */
-@media (max-width: 770px) {
+/* shut scroll for iPad and below start */
+@media (max-width: 770px),
+  (orientation: landscape) and (max-width: 1024px) and (min-width: 812px),
+  (orientation: landscape) and (max-height: 1025px) and (min-height: 1024px) {
   html,
   body {
     width: 100%;
@@ -1251,7 +1253,7 @@ ul.navbar-nav {
     -webkit-overflow-scrolling: touch;
   }
 }
-/* shut scroll for iPad mini and below end */
+/* shut scroll for iPad and below end */
 
 /* small screen start */
 @media (max-width: 700px) {
