@@ -23,9 +23,9 @@ body {
   overflow-x: hidden;
 }
 
-body.noverflow {
+/* body.noverflow {
   overflow: hidden;
-}
+} */
 
 div.beginning {
   background: url(../components/assets/home-bg.jpg) no-repeat center center/cover,
