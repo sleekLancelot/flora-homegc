@@ -1,13 +1,26 @@
-import React, { useRef, useState } from 'react'
-import { Link } from 'react-scroll'
+import React, { useRef, useState, useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom'
+import { Link as ScrollLink } from 'react-scroll'
 import logo from '../assets/FHGC weblogo.png';
 
 
 const Nav = () => {
+    let location = useLocation()
+    // console.log(location.pathname, location.pathname.slice(1, location.pathname.length).length);
+    useEffect(() => {
+        if (location.pathname.slice(1, location.pathname.length)) {
+            setNotHome(() => true)
+        } else {
+            setNotHome(() => false)
+        }
+    }, [location.pathname])
+
     const [navScroll, setNavScroll] = useState(false)
+    const [notHome, setNotHome] = useState(false)
 
     let button = useRef('button')
     let Nav = useRef('Nav')
+    let NavUL = useRef('NavUL')
 
     const onScroll = () => {
         if (window.pageYOffset > 100 && Nav.current) {
@@ -15,9 +28,6 @@ const Nav = () => {
         } else if (window.pageYOffset < 100 && Nav.current) {
             setNavScroll(() => false)
         }
-        // console.log(document.scrollingElement.scrollTop)
-
-        // document.removeEventListener('scroll', onScroll)
     }
 
     document.addEventListener('scroll', onScroll)
@@ -26,6 +36,15 @@ const Nav = () => {
         if (button.current.ariaExpanded) {
             document.body.classList.toggle('noverflow')
         }
+        e.preventDefault()
+    }
+
+    const unMountUL = (e) => {
+        if (button.current.ariaExpanded) {
+            document.body.classList.remove('noverflow')
+            NavUL.current.classList.remove('show');
+        }
+        e.preventDefault()
     }
 
     const showModal = () => {
@@ -38,7 +57,7 @@ const Nav = () => {
     }
 
     return (
-        <nav ref={Nav} className={`navbar navbar-expand-lg sticky-top ${navScroll ? 'shadow' : 'inherit'}`}>
+        <nav ref={Nav} className={`navbar navbar-expand-lg sticky-top ${navScroll ? 'shadow' : 'inherit'} ${notHome ? 'navColorBlack' : 'inherit'}`}>
             <div id='logo'>
                 <Link className="navbar-brand" to="/">
                     <img style={{ width: '150px' }} src={logo} alt="logo" />
@@ -53,44 +72,44 @@ const Nav = () => {
                 <span role="button" ><i className="fa fa-bars" aria-hidden="true" style={{ color: '#541484' }}></i></span>
             </button>
 
-            <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul className="navbar-nav mr-auto">
+            <div ref={NavUL} className="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul onClick={unMountUL} className='navbar-nav mr-auto'>
                     <li className="nav-item active">
-                        <a className="nav-link" href="#noWhere">Home <span className="sr-only">(current)</span></a>
+                        <Link className="nav-link" to='/'>Home <span className="sr-only">(current)</span></Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#noWhere">About</a>
+                        <Link className="nav-link" to='/about'>About</Link>
                     </li>
                     <li className="nav-item dropdown">
-                        <a className="nav-link dropdown-toggle" href="#noWhere" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <Link className="nav-link dropdown-toggle" to='/product' id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Product
-        </a>
+        </Link>
                         <div className="dropdown-menu" aria-labelledby="navbarDropdown">
 
-                            <a className="dropdown-item" href="#noWhere">Verification Service</a>
-                            <a className="dropdown-item" href="#noWhere">Complete Property Buyer Service</a>
-                            <a className="dropdown-item" href="#noWhere">Our Estates</a>
-                            <a className="dropdown-item" href="#noWhere">Design Build & Manage</a>
-                            <a className="dropdown-item" href="#noWhere">Done-For-You Investment</a>
-                            <a className="dropdown-item" href="#noWhere">Advisory</a>
+                            <Link className="dropdown-item" to='/#'>Verification Service</Link>
+                            <Link className="dropdown-item" to='/#'>Complete Property Buyer Service</Link>
+                            <Link className="dropdown-item" to='/#'>Our Estates</Link>
+                            <Link className="dropdown-item" to='/#'>Design Build & Manage</Link>
+                            <Link className="dropdown-item" to='/#'>Done-For-You Investment</Link>
+                            <Link className="dropdown-item" to='/#'>Advisory</Link>
                             <div className="dropdown-divider"></div>
-                            <a className="dropdown-item" href="#noWhere">Sell My Property</a>
+                            <Link className="dropdown-item" to='/#'>Sell My Property</Link>
                         </div>
                     </li>
                     <li className="nav-item dropdown">
-                        <a className="nav-link dropdown-toggle" href="#noWhere" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <Link className="nav-link dropdown-toggle" to='/#' id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Our Estate
-        </a>
+        </Link>
                         <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a className="dropdown-item" href="#noWhere">The Fern Island</a>
-                            <a className="dropdown-item" href="#noWhere">The Hive</a>
+                            <Link className="dropdown-item" to='/#'>The Fern Island</Link>
+                            <Link className="dropdown-item" to='/#'>The Hive</Link>
                         </div>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#noWhere">Blog</a>
+                        <Link className="nav-link" to='/blog'>Blog</Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#noWhere">Subscription</a>
+                        <Link className="nav-link" to='/login-register'>Login</Link>
                     </li>
                 </ul>
 
@@ -99,9 +118,9 @@ const Nav = () => {
                 </div>
 
                 <div className="d-flex justify-content-end">
-                    <Link to='signUp' spy={true} smooth={true}>
+                    <ScrollLink to='signUp' spy={true} smooth={true}>
                         <button type="button" className="custom-btn btn btn-lg">Register/Login</button>
-                    </Link>
+                    </ScrollLink>
 
                 </div>
             </div>

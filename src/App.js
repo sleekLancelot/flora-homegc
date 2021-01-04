@@ -1,9 +1,10 @@
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './css/App.css';
 import Nav from './components/layouts/Nav';
 import Home from './components/pages/Home';
 import Footer from './components/layouts/Footer';
 import SearchModal from './components/layouts/SearchModal';
+import LorR from './components/pages/LorR';
 
 function App() {
 
@@ -12,7 +13,10 @@ function App() {
       <Router>
         <SearchModal />
         <Nav />
-        <Home />
+        <Switch>
+          <Route exact path='/' children={<Home />} />
+          <Route path='/login-register' children={<LorR />} />
+        </Switch>
         <Footer />
       </Router>
     </div>

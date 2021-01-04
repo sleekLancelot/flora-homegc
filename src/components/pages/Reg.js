@@ -7,15 +7,14 @@ const Reg = ({ showReg }) => {
         email: '',
         callNumber: '',
         whatsAppNumber: '',
-        state: '',
-        country: '',
         category: '',
         referer: '',
+        message: '',
         password: '',
         password2: ''
     })
 
-    const { firstName, lastName, email, callNumber, whatsAppNumber, state, country, category, referer, password, password2 } = regDetails
+    const { firstName, lastName, email, callNumber, whatsAppNumber, category, referer, message, password, password2 } = regDetails
 
     const onChange = (e) => {
         setRegDetails({ ...regDetails, [e.target.name]: e.target.value })
@@ -30,12 +29,10 @@ const Reg = ({ showReg }) => {
             <input onChange={onChange} name='firstName' type="text" placeholder="FirstName" value={firstName} required />
             <input onChange={onChange} name='lastName' type="text" placeholder="lastName" value={lastName} required />
             <input onChange={onChange} name='email' type="email" placeholder="E-mail" value={email} required />
-            <input onChange={onChange} name='callNumber' type="number" placeholder="telephone number" value={callNumber} required />
-            <input onChange={onChange} name='whatsAppNumber' type='number' placeholder="Date Of Birth" value={whatsAppNumber} required />
-            <input onChange={onChange} name='state' type="text" placeholder="Place Of Birth" value={state} required />
-            <input onChange={onChange} name='country' type="text" placeholder="Nationality" value={country} required />
+            <input onChange={onChange} name='callNumber' type="number" placeholder="Call number" value={callNumber} required />
+            <input onChange={onChange} name='whatsAppNumber' type='number' placeholder="WhatsApp Number" value={whatsAppNumber} />
             <select name='category' value={category} className="mdb-select md-form" searchable="Search here.." onChange={onChange}>
-                <option value="" disabled selected>Select your category</option>
+                <option value="" disabled defaultValue>Select your category</option>
                 <option value="Individual buyer/Investors">Individual buyer/Investors</option>
                 <option value="Property professionals and contractors ">Property professionals and contractors </option>
                 <option value="Realtor, Agents, Marketers, Consultants">Realtor, Agents, Marketers, Consultants</option>
@@ -46,7 +43,7 @@ const Reg = ({ showReg }) => {
             </select>
 
             <select name='referer' value={referer} className="mdb-select md-form" searchable="Search here.." onChange={onChange}>
-                <option value="" disabled selected>How do you know about us</option>
+                <option value="" disabled defaultValue>How do you know about us</option>
                 <option value="Instagram">Instagram</option>
                 <option value="Facebook">Facebook</option>
                 <option value="Twitter">Twitter</option>
@@ -59,6 +56,8 @@ const Reg = ({ showReg }) => {
 
             <input onChange={onChange} name='password' type="password" placeholder="Password" value={password} required minLength='6' />
             <input onChange={onChange} name='password2' type="password" placeholder="Confirm-Password" value={password2} required minLength='6' />
+
+            <textarea name="message" value={message} id="message" placeholder='Any message? (how you want us to help)' onChange={onChange} />
 
             <input type='submit' value='Register' className="lr-submit" onClick={onSubmit} />
         </form>

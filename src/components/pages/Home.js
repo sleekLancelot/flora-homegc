@@ -24,7 +24,7 @@ const Home = () => {
 
   setTimeout(() => {
     setCurrent(current === length - 1 ? 0 : current + 1);
-  }, 5000);
+  }, 10000);
 
   const nextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
@@ -46,7 +46,7 @@ const Home = () => {
             id='carouselExampleControls'
             className='carousel slide'
             data-ride='carousel'
-            data-interval='2500'
+            data-interval='6500'
           >
             <div className='carousel-inner'>
               <div className='auto-container'>

@@ -28,8 +28,7 @@ body.noverflow {
 }
 
 div.beginning {
-  background: url(../components/assets/home-bg.jpg) no-repeat center
-      center/cover,
+  background: url(../components/assets/home-bg.jpg) no-repeat center center/cover,
     rgba(0, 0, 0, 0.6);
   background-blend-mode: darken;
   max-width: 100%;
@@ -65,6 +64,14 @@ button.navbar-toggler {
   padding: 7px 10px;
 }
 
+button.navbar-toggler:focus {
+  outline: none;
+}
+
+nav.navColorBlack a.nav-link {
+  color: #000 !important;
+}
+
 a.nav-link {
   color: #fff;
   font-size: 16px;
@@ -74,8 +81,10 @@ a.nav-link {
   text-align: center;
 }
 
-nav.shadow a.nav-link {
-  color: #000;
+nav.shadow a.nav-link,
+nav.navColorBlack a.nav-link,
+nav.navColorBlack .fa-search {
+  color: #000 !important;
 }
 
 div.dropdown-menu {
@@ -300,7 +309,7 @@ div.container {
 }
 
 div.con1 div.col-sm h4,
-.con3 > div > h4,
+.con3>div>h4,
 .sec3 h4,
 .sec4 h4,
 .sec5 h4 {
@@ -313,7 +322,7 @@ div.con1 div.col-sm h4,
 }
 
 div.con1 div.col-sm h2,
-.con3 > div > h2,
+.con3>div>h2,
 .sec3 h2,
 .sec4 h2,
 .sec5 h2 {
@@ -337,13 +346,11 @@ div.testTile {
 }
 
 div.testTile h2 {
-  color: linear-gradient(
-    to left,
-    #541484 0%,
-    #450575 25%,
-    #541484 75%,
-    #450575 100%
-  );
+  color: linear-gradient(to left,
+      #541484 0%,
+      #450575 25%,
+      #541484 75%,
+      #450575 100%);
   font-size: 36px;
 }
 
@@ -377,25 +384,23 @@ div.con3 {
   padding: 80px 0;
 }
 
-div.con3 > div {
+div.con3>div {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-div.con3 > div > h4 {
+div.con3>div>h4 {
   font-size: 16px;
   line-height: 1em;
-  color: linear-gradient(
-    to left,
-    #541484 0%,
-    #450575 25%,
-    #541484 75%,
-    #450575 100%
-  );
+  color: linear-gradient(to left,
+      #541484 0%,
+      #450575 25%,
+      #541484 75%,
+      #450575 100%);
 }
 
-div.con3 > div > h2 {
+div.con3>div>h2 {
   font-size: 36px;
   color: #1e1f36;
   font-weight: 700;
@@ -510,8 +515,7 @@ div.word h4 {
 div.sec2 {
   width: 100vw;
   height: 120vh;
-  background: url(../components/assets/mdspeech1.jpg) no-repeat fixed center
-      center/cover,
+  background: url(../components/assets/mdspeech1.jpg) no-repeat fixed center center/cover,
     var(--green);
   background-blend-mode: multiply;
 }
@@ -597,8 +601,7 @@ div.sec2 div.embed-responsive {
   margin-top: 60px;
   width: 100vw;
   height: 100vh;
-  background: url(../components/assets/testimonial-bg.jpg) no-repeat fixed
-      center/cover,
+  background: url(../components/assets/testimonial-bg.jpg) no-repeat fixed center/cover,
     #fdfdfd;
   background-blend-mode: overlay;
   color: #fff;
@@ -700,13 +703,11 @@ div.sec2 div.embed-responsive {
   position: absolute;
   left: -30px;
   content: '';
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0.13) 0%,
-    rgba(255, 255, 255, 0.13) 77%,
-    rgba(255, 255, 255, 0.5) 92%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  background: linear-gradient(to right,
+      rgba(255, 255, 255, 0.13) 0%,
+      rgba(255, 255, 255, 0.13) 77%,
+      rgba(255, 255, 255, 0.5) 92%,
+      rgba(255, 255, 255, 0) 100%);
   width: 10%;
   height: 100%;
   transform: translate(-100%);
@@ -766,20 +767,16 @@ ul.navbar-nav {
 }
 
 /* wide screens start */
-/* @media screen and (min-width: 995px) and (max-width: 1125px),
-  not screen and (max-width: 992px) {
+
+@media (max-width: 1125px) and (min-width: 991px) {
   div.navbar-collapse ul.navbar-nav {
     margin-left: 80px;
   }
-} */
+}
 
-@media (max-width: 1125px) {
-  div.navbar-collapse.show ul.navbar-nav {
+@media (max-width: 990px) {
+  div.navbar-collapse ul.navbar-nav {
     margin-left: 0;
-  }
-
-  div.navbar-collapse ul.navbar-nav {
-    margin-left: 80px;
   }
 }
 
@@ -789,6 +786,7 @@ ul.navbar-nav {
     text-align: center;
   }
 }
+
 /* iPad end */
 
 /* breakpoint for iPad pro start */
@@ -1017,6 +1015,7 @@ ul.navbar-nav {
     top: 55px !important;
   }
 }
+
 /* surface Dou end */
 
 /* wide screens end */
@@ -1064,7 +1063,7 @@ ul.navbar-nav {
     display: none;
   }
 
-  div.collapse {
+  div.collapse.show {
     height: 100vh;
   }
 
@@ -1203,6 +1202,7 @@ ul.navbar-nav {
     top: 20em;
   }
 }
+
 @media (orientation: portrait) and (max-width: 400px) and (min-width: 350px) {
   .sec4 .slider {
     top: 170px;
@@ -1212,6 +1212,7 @@ ul.navbar-nav {
     margin-top: 260px;
   }
 }
+
 /* second carousel breakpoint for iPhone 6 end*/
 
 /* product div for pixel2 start*/
@@ -1220,6 +1221,7 @@ ul.navbar-nav {
     width: 550px;
   }
 }
+
 /* product div for pixel2 end*/
 
 /* LandScape mode for mobile end*/
@@ -1234,12 +1236,14 @@ ul.navbar-nav {
     top: 170px;
   }
 }
+
 /* second carousel breakPoint for iphone5/SE end */
 
 /* shut scroll for iPad and below start */
 @media (max-width: 770px),
-  (orientation: landscape) and (max-width: 1024px) and (min-width: 812px),
-  (orientation: landscape) and (max-height: 1025px) and (min-height: 1024px) {
+(orientation: landscape) and (max-width: 1024px) and (min-width: 812px),
+(orientation: landscape) and (max-height: 1025px) and (min-height: 1024px) {
+
   html,
   body {
     width: 100%;
@@ -1247,12 +1251,13 @@ ul.navbar-nav {
     overflow: hidden;
   }
 
-  body > div {
+  body>div {
     height: 100%;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
   }
 }
+
 /* shut scroll for iPad and below end */
 
 /* small screen start */
@@ -1559,6 +1564,7 @@ ul.navbar-nav {
     transform: translate(-28%, -35%) !important;
   }
 }
+
 /* iPhone 3/4/4s end*/
 
 /* Galaxy fold start */
@@ -1593,6 +1599,7 @@ ul.navbar-nav {
     top: -35px;
   }
 }
+
 /* Galaxy fold end */
 
 /* small screen end */

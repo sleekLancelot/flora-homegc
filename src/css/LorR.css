@@ -127,8 +127,14 @@ form#registerBox {
 form#loginBox input:not(.lr-submit),
 form#registerBox input:not(.lr-submit),
 select {
-    width: 300px;
     height: 40px;
+}
+
+form#loginBox input:not(.lr-submit),
+form#registerBox input:not(.lr-submit),
+select,
+textarea {
+    width: 300px;
     font-size: 18px;
     cursor: pointer;
     padding: 10px;
@@ -155,16 +161,20 @@ form#registerBox input:hover,
 form#loginBox input:focus,
 form#registerBox input:focus,
 select:hover,
-select:focus {
+select:focus,
+textarea:hover,
+textarea:focus {
     outline: none;
     cursor: pointer;
 }
 
-form input::placeholder {
+form input::placeholder,
+select::placeholder,
+textarea::placeholder {
     font-size: 12px;
     letter-spacing: 1px;
     padding: 5px;
-    color: rgba(0, 0, 0, 0.4);
+    color: rgba(0, 0, 0, 0.6);
 }
 
 input.lr-submit {
