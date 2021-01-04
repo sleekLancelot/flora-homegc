@@ -42,7 +42,7 @@ const Nav = () => {
     const unMountUL = (e) => {
         if (button.current.ariaExpanded) {
             document.body.classList.remove('noverflow')
-            NavUL.current.classList.remove('show');
+            document.querySelector('.navbar-collapse').classList.remove('show');
         }
         e.preventDefault()
     }
