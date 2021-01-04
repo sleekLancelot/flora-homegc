@@ -75,10 +75,10 @@ const Nav = () => {
 
             <div ref={NavUL} className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className='navbar-nav mr-auto'>
-                    <li className="nav-item active">
+                    <li className="nav-item active" data-toggle="collapse" data-target="#navbarSupportedContent">
                         <Link className="nav-link" to='/'>Home <span className="sr-only">(current)</span></Link>
                     </li>
-                    <li className="nav-item">
+                    <li className="nav-item" data-toggle="collapse" data-target="#navbarSupportedContent">
                         <Link className="nav-link" to='/about'>About</Link>
                     </li>
                     <li className="nav-item dropdown">
@@ -109,7 +109,7 @@ const Nav = () => {
                     <li className="nav-item">
                         <Link className="nav-link" to='/blog'>Blog</Link>
                     </li>
-                    <li className="nav-item">
+                    <li className="nav-item" data-toggle="collapse" data-target="#navbarSupportedContent">
                         <Link className="nav-link" to='/login-register'>Register/Login</Link>
                     </li>
                 </ul>
