@@ -32,17 +32,18 @@ const Nav = () => {
 
     document.addEventListener('scroll', onScroll)
 
-    const onClick = (e) => {
-        if (button.current.ariaExpanded) {
-            document.body.classList.toggle('noverflow')
-        }
-        e.preventDefault()
-    }
+    // const onClick = (e) => {
+    //     if (button.current.ariaExpanded) {
+    //         document.body.classList.toggle('noverflow')
+    //     }
+    //     e.preventDefault()
+    // }
 
     const unMountUL = (e) => {
-        if (button.current.ariaExpanded) {
+        // eslint-disable-next-line eqeqeq
+        if ((e.target.classList.contains('nav-link' || 'dropdown-item') && !e.target.id == 'dropdown-toggle') || e.target.id == 'logo' || button.current.ariaExpanded) {
             document.body.classList.remove('noverflow')
-            document.querySelector('.navbar-collapse').classList.remove('show');
+            NavUL.current.classList.remove('show');
         }
         e.preventDefault()
     }
@@ -57,7 +58,7 @@ const Nav = () => {
     }
 
     return (
-        <nav ref={Nav} className={`navbar navbar-expand-lg sticky-top ${navScroll ? 'shadow' : 'inherit'} ${notHome ? 'navColorBlack' : 'inherit'}`}>
+        <nav onClick={unMountUL} ref={Nav} className={`navbar navbar-expand-lg sticky-top ${navScroll ? 'shadow' : 'inherit'} ${notHome ? 'navColorBlack' : 'inherit'}`}>
             <div id='logo'>
                 <Link className="navbar-brand" to="/">
                     <img style={{ width: '150px' }} src={logo} alt="logo" />
@@ -68,12 +69,12 @@ const Nav = () => {
                 <span className="navbar-toggler-icon"></span>
             </button> */}
 
-            <button ref={button} onClick={onClick} className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button ref={button} className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span role="button" ><i className="fa fa-bars" aria-hidden="true" style={{ color: '#541484' }}></i></span>
             </button>
 
             <div ref={NavUL} className="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul onClick={unMountUL} className='navbar-nav mr-auto'>
+                <ul className='navbar-nav mr-auto'>
                     <li className="nav-item active">
                         <Link className="nav-link" to='/'>Home <span className="sr-only">(current)</span></Link>
                     </li>
@@ -109,7 +110,7 @@ const Nav = () => {
                         <Link className="nav-link" to='/blog'>Blog</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to='/login-register'>Login</Link>
+                        <Link className="nav-link" to='/login-register'>Register/Login</Link>
                     </li>
                 </ul>
 
