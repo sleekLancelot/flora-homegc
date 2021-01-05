@@ -96,7 +96,7 @@ const Footer = () => {
                 <div className="auto-container">
                     <div className="inner-container clearfix">
                         <div className="copyright-text">
-                            <p>© Copyright 2019 <a href="index.php">FloraHomes GC</a> | All Rights Reserved.</p>
+                            <p>© Copyright 2021 <Link to='/'>FloraHomes GC</Link> | All Rights Reserved.</p>
                         </div>
                     </div>
                 </div>
