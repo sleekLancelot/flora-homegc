@@ -33,6 +33,18 @@ const Nav = () => {
 
     const logoClick = (e) => {
         if (button.current.ariaExpanded) {
+
+    // const onClick = (e) => {
+    //     if (button.current.ariaExpanded) {
+    //         document.body.classList.toggle('noverflow')
+    //     }
+    //     e.preventDefault()
+    // }
+
+    const unMountUL = (e) => {
+        // eslint-disable-next-line eqeqeq
+        if ((e.target.classList.contains('nav-link' || 'dropdown-item') && !e.target.id == 'dropdown-toggle') || e.target.id == 'logo' || button.current.ariaExpanded) {
+            document.body.classList.remove('noverflow')
             NavUL.current.classList.remove('show');
         }
         e.preventDefault()
@@ -57,8 +69,13 @@ const Nav = () => {
     }
 
     return (
+
         <nav ref={Nav} className={`navbar navbar-expand-lg sticky-top ${navScroll ? 'shadow' : 'inherit'} ${notHome ? 'navColorBlack' : 'inherit'}`}>
             <div id='logo' onClick={logoClick}>
+
+        <nav onClick={unMountUL} ref={Nav} className={`navbar navbar-expand-lg sticky-top ${navScroll ? 'shadow' : 'inherit'} ${notHome ? 'navColorBlack' : 'inherit'}`}>
+            <div id='logo'>
+
                 <Link className="navbar-brand" to="/">
                     <img style={{ width: '150px' }} src={logo} alt="logo" />
                 </Link>
@@ -110,8 +127,13 @@ const Nav = () => {
                     <li className="nav-item">
                         <Link className="nav-link" to='/blog' data-toggle="collapse" data-target="#navbarSupportedContent">Blog</Link>
                     </li>
+
                     <li className="nav-item">
                         <Link className="nav-link" to='/login-register' data-toggle="collapse" data-target="#navbarSupportedContent">Register/Login</Link>
+
+                    <li className="nav-item" data-toggle="collapse" data-target="#navbarSupportedContent">
+                        <Link className="nav-link" to='/login-register'>Register/Login</Link>
+
                     </li>
                 </ul>
 
